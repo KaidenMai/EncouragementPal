@@ -2,6 +2,7 @@
 #include <Geode/modify/PlayLayer.hpp>
 
 #include <array>
+#include <filesystem>
 #include <random>
 #include <string>
 #include <vector>
@@ -14,41 +15,46 @@ using namespace geode::prelude;
 
 namespace lines {
     static std::vector<std::string> const p25 = {
-        "Twenty-five percent. A quarter of a success. I'll have it framed. In a very small frame.",
-        "You've survived this long. Statistically, that's probably an accident.",
-        "Good news: you're making progress. Bad news: so is the level.",
-        "Look at you, pressing buttons at roughly the correct times. Adorable.",
+        "25%!",
+        "Go!",
+        "Nice!",
+        "Woah..",
     };
     static std::vector<std::string> const p50 = {
-        "Halfway. I've prepared a congratulations speech. It is also only halfway written.",
-        "Fifty percent. You are now exactly as successful as you are unsuccessful. Balance.",
-        "Halfway there. I'd clap, but I'm saving my enthusiasm for something impressive.",
-        "Midpoint reached. Your test results have been upgraded from 'tragic' to 'concerning'.",
+        "50%!",
+        "ts tuff",
+        ":O",
+        "WHAT.",
     };
     static std::vector<std::string> const p75 = {
-        "Seventy-five percent. I'm detecting something unfamiliar. I believe it's called 'competence'. Disturbing.",
-        "Three quarters done. Please do not let this go to your head. There isn't much room up there.",
-        "You're doing well. I've double-checked the sensors. They agree, reluctantly.",
-        "Keep going. The science requires it. Also, I'm curious how you'll fail.",
+        "75%!",
+        "yo hes almost there!",
+        "holy shit..",
+        "ur so portuguese.",
     };
     static std::vector<std::string> const p90 = {
-        "Ninety percent. Don't choke. I'm saying that to be supportive. Mostly.",
-        "So close. This would be a terrible time to remember how bad you usually are.",
-        "Ninety percent. If you finish, there will be a celebration. Probably. Paperwork is pending.",
-        "Almost there. I've started writing your success report. I've also started the other one.",
+        "90%!",
+        "i think i might cream myself..",
+        "👀",
+        "uh-",
     };
     static std::vector<std::string> const newBest = {
-        "A new personal best. I've updated your file from 'hopeless' to 'mostly hopeless'. Celebrate responsibly.",
-        "New record. You still died, of course. But you died further along. That's growth.",
-        "That was your best attempt yet. I'm logging it under 'unexpected anomalies'.",
-        "Personal best achieved. I'd give you a reward, but rewards encourage behavior.",
-        "Further than ever before. Which is, I'll admit, slightly further than I bet.",
+        ":O",
+        "ouh shiii",
+        "poo",
+        "6-7",
+        "ohh mah gawd",
     };
     static std::vector<std::string> const complete = {
-        "You finished. I am contractually obligated to say 'well done'. Well. Done.",
-        "Level complete. I'll prepare the cake. Hypothetically. In theory. Do not ask about the cake.",
-        "Congratulations. You have proven that persistence can overcome a total lack of talent.",
-        "Test passed. I'm genuinely surprised, and I am never genuinely anything.",
+        "*feels the aura*",
+        "Level complete. I'll prepare the cake. Hypothetically. In theory. Do not ask about the cake, Its all a lie..",
+        "*mogs*",
+        "GG",
+        "GET REKT SURV!",
+        "Mpphh~ ah~ ngh~ *PLAP PLAP PLAP*",
+        "THERE IS A STAIN THE SIZE OF TEXAS IN MY PANTS - itzvapestinct.",
+        "AMBATUKAAAAAAAAAAAAAA",
+        "IM CREAMING AHHH~"
     };
 
     std::string const& pick(std::vector<std::string> const& list) {
@@ -90,7 +96,13 @@ protected:
         constexpr float textScale = 0.55f;
 
         // the pal
-        CCNode* pal = CCSprite::create("pal.png"_spr);
+             CCSprite* pal = nullptr;
+        auto custom = Mod::get()->getSettingValue<std::filesystem::path>("custom-picture");
+        std::error_code ec;
+        if (!custom.empty() && std::filesystem::exists(custom, ec)) {
+            pal = CCSprite::create(custom.string().c_str());
+        }
+        if (!pal) pal = CCSprite::create("pal.png"_spr);
         if (!pal) pal = CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
         if (pal) {
             pal->setScale(palSize / std::max(pal->getContentWidth(), 1.f));
