@@ -6,10 +6,10 @@
 		"mac": "2.2081",
 		"ios": "2.2081"
 	},
-	"id": "kaiden.encouragement-pal",
+	"id": "wTyphoone.encouragement-pal",
 	"name": "Encouragement Pal",
 	"version": "v1.0.0",
-	"developer": "Kaiden",
+	"developer": "wTyphoone",
 	"description": "A tiny, slightly sarcastic pal who (reluctantly) cheers you on as you make progress.",
 	"tags": ["interface", "joke", "gameplay"],
 	"resources": {
