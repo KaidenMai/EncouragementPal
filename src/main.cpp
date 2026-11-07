@@ -146,6 +146,16 @@ protected:
 
         label->setPosition({bubble->getPositionX() + pad, bubble->getPositionY()});
         this->addChild(label, 3);
+        
+        // name tag
+        auto name = Mod::get()->getSettingValue<std::string>("pal-name");
+        if (!name.empty()) {
+            auto nameLabel = CCLabelBMFont::create(name.c_str(), "goldFont.fnt");
+            nameLabel->setScale(0.45f);
+            nameLabel->setAnchorPoint({0.f, 0.f});
+            nameLabel->setPosition({bubble->getPositionX() + 4.f, bubble->getPositionY() + bubbleSize.height / 2.f + 1.f});
+            this->addChild(nameLabel, 3);
+        }
 
         this->setContentSize({palSize + 6.f + bubbleSize.width, std::max(palSize, bubbleSize.height)});
 
