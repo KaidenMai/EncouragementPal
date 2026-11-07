@@ -1,0 +1,68 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "kaiden.encouragement-pal",
+	"name": "Encouragement Pal",
+	"version": "v1.0.0",
+	"developer": "Kaiden",
+	"description": "A tiny, slightly sarcastic pal who (reluctantly) cheers you on as you make progress.",
+	"tags": ["interface", "joke", "gameplay"],
+	"resources": {
+		"sprites": ["resources/*.png"]
+	},
+	"settings": {
+		"milestone-cheers": {
+			"type": "bool",
+			"name": "Milestone Cheers",
+			"description": "Pal comments when you reach 25%, 50%, 75% and 90% of a level.",
+			"default": true
+		},
+		"milestones-past-best-only": {
+			"type": "bool",
+			"name": "Only Past My Best",
+			"description": "Only cheer at milestones you've <cy>never reached before</c> on that level. Turn off to hear from Pal every attempt.",
+			"default": true
+		},
+		"new-best-cheers": {
+			"type": "bool",
+			"name": "New Best Cheers",
+			"description": "Pal comments when you die with a new best percentage.",
+			"default": true
+		},
+		"min-new-best": {
+			"type": "int",
+			"name": "Minimum New Best %",
+			"description": "Ignore new bests below this percentage (so 2% -> 3% doesn't count).",
+			"default": 10,
+			"min": 0,
+			"max": 99,
+			"control": { "slider": true, "arrows": true }
+		},
+		"complete-cheers": {
+			"type": "bool",
+			"name": "Level Complete Cheers",
+			"description": "Pal comments when you beat a level.",
+			"default": true
+		},
+		"practice-mode": {
+			"type": "bool",
+			"name": "Talk in Practice Mode",
+			"description": "Let Pal talk in practice mode too.",
+			"default": false
+		},
+		"duration": {
+			"type": "float",
+			"name": "Message Duration",
+			"description": "How many seconds each message stays on screen.",
+			"default": 3.5,
+			"min": 1.0,
+			"max": 10.0,
+			"control": { "slider": true, "slider-step": 0.5 }
+		}
+	}
+}
