@@ -16,6 +16,16 @@
 		"sprites": ["resources/*.png"]
 	},
 	"settings": {
+		   		"custom-picture": {
+   			"type": "file",
+   			"name": "Custom Picture",
+   			"description": "Pick a PNG to use instead of the default pal. Leave it empty (or press reset) to use the default.",
+   			"default": "",
+   			"control": {
+   				"dialog": "open",
+   				"filters": [{ "files": ["*.png"], "description": "PNG images" }]
+   			}
+   		},
 		"milestone-cheers": {
 			"type": "bool",
 			"name": "Milestone Cheers",
