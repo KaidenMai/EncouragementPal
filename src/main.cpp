@@ -51,10 +51,10 @@ namespace lines {
         "*mogs*",
         "GG",
         "GET REKT SURV!",
-        "Mpphh~ ah~ ngh~ *PLAP PLAP PLAP*",
-        "THERE IS A STAIN THE SIZE OF TEXAS IN MY PANTS - itzvapestinct.",
-        "AMBATUKAAAAAAAAAAAAAA",
-        "IM CREAMING AHHH~"
+        "swag.",
+        "THERE IS A STAIN THE SIZE OF TEXAS IN MY PANTS.",
+        "YA PROSHOL",
+        "my man."
     };
 
     std::string const& pick(std::vector<std::string> const& list) {
