@@ -16,6 +16,12 @@
 		"sprites": ["resources/*.png"]
 	},
 	"settings": {
+				"pal-name": {
+			"type": "string",
+			"name": "Pal's Name",
+			"description": "What your pal is called. Shown above her messages. Leave empty to hide it.",
+			"default": "Pal"
+		},
 		   		"custom-picture": {
    			"type": "file",
    			"name": "Custom Picture",
