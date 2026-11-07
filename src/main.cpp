@@ -34,7 +34,7 @@ namespace lines {
     };
     static std::vector<std::string> const p90 = {
         "90%!",
-        "i think i might cream myself..",
+        "GO!.",
         "👀",
         "uh-",
     };
